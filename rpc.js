@@ -13,5 +13,10 @@ var rpc = rpc || {
  },
  randBetween: function(nMin,nMax){
   return Math.floor(Math.random() * (nMax - nMin + 1) + nMin);
+ },
+ getRandomPrettyDarkColor: function(){
+   var h = rpc.randBetween(0,359),
+       s = Math.floor(rpc.randBetween(74,215) / 255 * 100),
+       l = Math.floor(rpc.randBetween(35,95) / 255 * 100);
  }
 };
