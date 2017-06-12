@@ -1,11 +1,14 @@
 var rpc = rpc || {
  ranges: {
+  all: { max:359, min:0},
   blue: { max:249, min:151},
   green: { max:150, min:61},
   yellow: { max:60, min:36},
   orange: { max:35, min:10},
   red: { max:[9,359], min:[0,341]},
-  purple: { max:340, min:250}
+  purple: { max:340, min:250},
+  saturation: {max:215, min:74},
+  luminance: {max:[95,225], min:[35,165]}
  },
  hslToCSS: function(arrHSL){
   return "hsl("+ arrHSL[0] +", "+ arrHSL[1] +"%, "+ arrHSL[2] +"%)";
@@ -25,8 +28,8 @@ var rpc = rpc || {
     hueRange.max = hueRange.max[randomIndex];
    }
    var h = rpc.randBetween(hueRange.min,hueRange.max),
-       s = Math.floor(rpc.randBetween(74,215) / 255 * 100),
-       l = Math.floor(rpc.randBetweens([35,165],[95,225]) / 255 * 100);
+       s = Math.floor(rpc.randBetween(rpc.ranges.saturation.min,rpc.ranges.saturation.max) / 255 * 100),
+       l = Math.floor(rpc.randBetweens(rpc.ranges.luminance.min,rpc.ranges.luminance.max) / 255 * 100);
    return [h,s,l];
  },
  getRandomPrettyDarkColor: function(hueRange){
@@ -37,8 +40,8 @@ var rpc = rpc || {
     hueRange.max = hueRange.max[randomIndex];
    }
    var h = rpc.randBetween(hueRange.min, hueRange.max),
-       s = Math.floor(rpc.randBetween(74,215) / 255 * 100),
-       l = Math.floor(rpc.randBetween(35,95) / 255 * 100);
+       s = Math.floor(rpc.randBetween(rpc.ranges.saturation.min,rpc.ranges.saturation.max) / 255 * 100),
+       l = Math.floor(rpc.randBetween(rpc.ranges.luminance.min[0],rpc.ranges.luminance.max[0]) / 255 * 100);
    return [h,s,l];
  },
  getRandomPrettyLightColor: function(hueRange){
@@ -49,8 +52,8 @@ var rpc = rpc || {
     hueRange.max = hueRange.max[randomIndex];
    }
    var h = rpc.randBetween(hueRange.min, hueRange.max),
-       s = Math.floor(rpc.randBetween(74,215) / 255 * 100),
-       l = Math.floor(rpc.randBetween(165,225) / 255 * 100);
+       s = Math.floor(rpc.randBetween(rpc.ranges.saturation.min,rpc.ranges.saturation.max) / 255 * 100),
+       l = Math.floor(rpc.randBetween(rpc.ranges.luminance.min[1],rpc.ranges.luminance.max[1]) / 255 * 100);
    return [h,s,l];
  },
  getRandomPrettyColorPair: function(sReturnType, hueRange){
@@ -62,7 +65,7 @@ var rpc = rpc || {
    hueRange.max = hueRange.max[randomIndex];
   }
   var darkColor = rpc.getRandomPrettyDarkColor(hueRange);
-  var lightColor = [darkColor[0].valueOf(), darkColor[1].valueOf(), Math.floor(rpc.randBetween(165,225) / 255 * 100)];
+  var lightColor = [darkColor[0].valueOf(), darkColor[1].valueOf(), Math.floor(rpc.randBetween(rpc.ranges.luminance.min[1],rpc.ranges.luminance.max[1]) / 255 * 100)];
   switch (sReturnType){
    case "HSL":
      var darkHSL = rpc.hslToCSS(darkColor);
