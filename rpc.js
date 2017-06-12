@@ -14,13 +14,13 @@ var rpc = rpc || {
   return Math.floor(Math.random() * (nMax - nMin + 1) + nMin);
  },
  randBetweens: function(arrMin, arrMax){
-  var randomIndex = randBetween(0, (arrMax.length-1));
-  return randBetween(arrMin[randomIndex], arrMax[randomIndex]);
+  var randomIndex = rpc.randBetween(0, (arrMax.length-1));
+  return rpc.randBetween(arrMin[randomIndex], arrMax[randomIndex]);
  },
  getRandomPrettyColor: function(hueRange){
-   if ( typeof(hueRange) === "undefined" ) { hueRange = {min: 0, max: 359}; }
+   if ( typeof(hueRange) === "undefined" ) { var hueRange = {min: 0, max: 359}; }
    if ( typeof(hueRange.min) === "object" ) { 
-    var randomIndex = randBetween(0, (hueRange.min.length-1));
+    var randomIndex = rpc.randBetween(0, (hueRange.min.length-1));
     hueRange.min = hueRange.min[randomIndex];
     hueRange.max = hueRange.max[randomIndex];
    }
@@ -30,39 +30,39 @@ var rpc = rpc || {
    return [h,s,l];
  },
  getRandomPrettyDarkColor: function(hueRange){
-   if ( typeof(hueRange) === "undefined" ) { hueRange = {min: 0, max: 359}; }
+   if ( typeof(hueRange) === "undefined" ) { var hueRange = {min: 0, max: 359}; }
    if ( typeof(hueRange.min) === "object" ) { 
-    var randomIndex = randBetween(0, (hueRange.min.length-1));
+    var randomIndex = rpc.randBetween(0, (hueRange.min.length-1));
     hueRange.min = hueRange.min[randomIndex];
     hueRange.max = hueRange.max[randomIndex];
    }
-   var h = rpc.randBetween(hueRange.min,hueRange.max),
+   var h = rpc.randBetween(hueRange.min, hueRange.max),
        s = Math.floor(rpc.randBetween(74,215) / 255 * 100),
        l = Math.floor(rpc.randBetween(35,95) / 255 * 100);
    return [h,s,l];
  },
  getRandomPrettyLightColor: function(hueRange){
-   if ( typeof(hueRange) === "undefined" ) { hueRange = {min: 0, max: 359}; }
+   if ( typeof(hueRange) === "undefined" ) { var hueRange = {min: 0, max: 359}; }
    if ( typeof(hueRange.min) === "object" ) { 
-    var randomIndex = randBetween(0, (hueRange.min.length-1));
+    var randomIndex = rpc.randBetween(0, (hueRange.min.length-1));
     hueRange.min = hueRange.min[randomIndex];
     hueRange.max = hueRange.max[randomIndex];
    }
-   var h = rpc.randBetween(hueRange.min,hueRange.max),
+   var h = rpc.randBetween(hueRange.min, hueRange.max),
        s = Math.floor(rpc.randBetween(74,215) / 255 * 100),
        l = Math.floor(rpc.randBetween(165,225) / 255 * 100);
    return [h,s,l];
  },
  getRandomPrettyColorPair: function(sReturnType, hueRange){
   if ( typeof(sReturnType) === "undefined" ) { var sReturnType = "HSL"; }
-  if ( typeof(hueRange) === "undefined" ) { hueRange = {min: 0, max: 359}; }
+  if ( typeof(hueRange) === "undefined" ) { var hueRange = {min: 0, max: 359}; }
   if ( typeof(hueRange.min) === "object" ) { 
-   var randomIndex = randBetween(0, (hueRange.min.length-1));
+   var randomIndex = rpc.randBetween(0, (hueRange.min.length-1));
    hueRange.min = hueRange.min[randomIndex];
    hueRange.max = hueRange.max[randomIndex];
   }
   var darkColor = rpc.getRandomPrettyDarkColor(hueRange);
-  var lightColor = [darkColor[0].valueOf(), darkColor[1].valueOf(), Math.floor(randBetween(165,225) / 255 * 100)];
+  var lightColor = [darkColor[0].valueOf(), darkColor[1].valueOf(), Math.floor(rpc.randBetween(165,225) / 255 * 100)];
   switch (sReturnType){
    case "HSL":
      var darkHSL = rpc.hslToCSS(darkColor);
