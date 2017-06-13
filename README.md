@@ -4,10 +4,10 @@ JavaScript library to generate random, pretty colors
 <table border="0" cellpadding="2" cellspacing="2">
  <tbody>
   <tr>
-   <td width="75%">
+   <td width="33%">
     <p>Limits the random colors in both their saturation and luminance values to avoid overly bright, or overly dull/gray colors</p>
    </td>
-   <td width="25%">
+   <td width="67%">
     <img alt="Color picker showing aproximate constraints on saturation and luminance, plus picker control explanations" border="0" src="https://github.com/dsmagic12/randPrttyClrs/blob/master/RandomPrettyColors_SL_Ranges2.png"/>
    </td>
   </tr>
