@@ -1,6 +1,6 @@
 # randPrttyClrs
 JavaScript library to generate random, pretty colors
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 <table border="0" cellpadding="2" cellspacing="2">
  <tbody>
   <tr>
@@ -46,4 +46,4 @@ $("DIV").each(function(){
 </ol>
 <!-- end of use case list -->
 </div>
-<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/>
+
