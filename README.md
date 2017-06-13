@@ -15,18 +15,6 @@ JavaScript library to generate random, pretty colors
 </table
  
 <br/>
-<H2 class='sectionHead'>Basic usage</H2>
-<div class='sectionContent'>
-<pre class='hljs javascript js-snippit'><code class='useCaseExampleCode hljs javascript'><script type="text/javascript" src="../rpc.js"></script>
-<script type="text/javascript">
- $(document).ready(function(){
-  $("DIV").each(function(){
-    var cPair = rpc.getRandomPrettyColorPair("HSL");
-    $(this).css({"background-color":cPair[1],"color":cPair[0]});
-  });
- });
-</script></code></pre>
-</div>
 <H2 class='sectionHead'>Use Cases</H2>
 <div class='sectionContent'>
 
