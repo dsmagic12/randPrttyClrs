@@ -17,15 +17,15 @@ JavaScript library to generate random, pretty colors
 <br/>
 <H2 class='sectionHead'>Basic usage</H2>
 <div class='sectionContent'>
-<pre class='hljs javascript js-snippit'><code class='useCaseExampleCode'><script type="text/javascript" src="../rpc.js"></script>
-<script type="text/javascript">
- $(document).ready(function(){
-  $("DIV").each(function(){
-    var cPair = rpc.getRandomPrettyColorPair("HSL");
-    $(this).css({"background-color":cPair[1],"color":cPair[0]});
+<pre class='hljs javascript js-snippit'><code class='useCaseExampleCode hljs javascript'><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../rpc.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+ $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  $(<span class="hljs-string">"DIV"</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> cPair = rpc.getRandomPrettyColorPair(<span class="hljs-string">"HSL"</span>);
+    $(<span class="hljs-keyword">this</span>).css({<span class="hljs-string">"background-color"</span>:cPair[<span class="hljs-number">1</span>],<span class="hljs-string">"color"</span>:cPair[<span class="hljs-number">0</span>]});
   });
  });
-</script></code></pre>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 </div>
 <H2 class='sectionHead'>Use Cases</H2>
 <div class='sectionContent'>
@@ -46,3 +46,4 @@ $("DIV").each(function(){
 </ol>
 <!-- end of use case list -->
 </div>
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/>
